@@ -1,0 +1,42 @@
+.playing {
+  position: fixed;
+  bottom: 0;
+  background: linear-gradient(to right, black, #01703c);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    p:nth-child(1) {
+      color: #d6eab5;
+      margin-bottom: 5px;
+    }
+    img {
+      width: 90px;
+      border-radius: 50%;
+    }
+  }
+}
+
+//! dönme efekti verme
+//* CSS te animasyonlarımızı @Keyframes etiketini kullanarak yapıyoruz.
+
+.animate {
+  //aşağıdaki turn yapısını 3s süre ile çalıştırsın
+  animation: turn 3s infinite linear;
+}
+
+//* CSS te animasyonlarımızı @Keyframes etiketini kullanarak yapıyoruz.
+@keyframes turn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

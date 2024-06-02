@@ -1,0 +1,27 @@
+//Mix-in'ler, tekrarlayan CSS kodlarını bir yerde toplayarak, bunları birden çok yerde kullanmanıza olanak verir.
+//Örneğin, bir stil bloğu ya da fonksiyon gibi düşünülebilir. Mix-in yazarsınız ve ardından @include mixin-adı; şeklinde çağırarak, tanımladığınız stilleri ya da kuralları istediğiniz CSS sınıflarına veya elementlerine ekleyebilirsiniz. Bu yaklaşım, kod tekrarını azaltır, CSS yazımını kolaylaştırır ve stil yönetimini daha verimli hale getirir.
+
+@mixin laptop {
+    @media (max-width:1000px) {
+        //yazdığım kodların media etiketi içerisine gelmesini istiyorsam content diyorum. farklı bir yere gelmesini istiyoesam contenti oraya taşımam gerekir
+        @content;  
+    }
+}
+
+@mixin ipad-pro {
+    @media (max-width: 850px) {
+        @content;
+    }
+}
+
+@mixin ipad {
+    @media (max-width:800px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width:670px){
+        @content;
+    }
+}

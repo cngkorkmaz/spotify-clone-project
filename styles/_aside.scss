@@ -1,0 +1,76 @@
+//? ASIDE ALANI
+aside{
+   
+    margin: 10px;
+    background: $card-background;
+    padding: 20px 15px;
+    border-radius: $radius;
+    display: flex;
+    justify-content: center;
+    height: 97vh;
+
+
+    //ilk başta büyük resim görünmesin diye aşağıdaki kodu verdik
+ figure {
+        .no-text {
+            //büyük ekranlarda ilk başta görünme
+            display: none;
+            //ipad ekranlarında bu class isimli resim görünsün
+            @include ipad {
+                display: block;
+                width: 40px;
+            }
+        }
+
+        img {
+            max-width: 130px;
+            cursor: pointer;
+            //ipad ekranlarda görünmemesi için aşağıdaki kod
+            @include ipad{
+                display: none;
+            }
+        }
+
+        nav {
+          
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 30px;
+
+            a {
+             
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                //taşma olduğunda yan taraflardan devam etsin.
+                white-space: nowrap;
+                padding: 10px;
+                border-radius: $radius;
+                //hover yaptığımızda ise spotify rengi gelsin
+                &:hover {
+                    background-color: $spotify-color ;
+                    color: black;
+                    transition: all 0.3s;
+                }
+
+                i{
+                    
+                    //ipad ekranlarında iconları büyüt komutu
+                    @include ipad {
+                        font-size: 25px;
+                    }
+                }
+
+                span {
+                    @include ipad {
+                        //ipadlerde görünme
+                        display: none;
+                    }
+                }
+
+            }
+        }
+    }
+
+}
